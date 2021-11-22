@@ -18,38 +18,107 @@
     <!-- ICI on placera une navbar latérame avec le sommaire de la page  -->
     <!-- Ensuite on mettra un diaporama full width (cf. container-fluid) -->
 
-    <header class="container bg-warning">
+    <header class="container bg-light ">
         <div class="row">
             <div class="col-8">
-                <h1 class="display-1">Cours SQL - Accueil</h1>
+                <h1 class="display-1 ">Cours SQL - Accueil</h1>
                 <p class="lead">...</p>
             </div>
         </div>
         <!-- fin row  -->
     </header>
 
-    <section class="container mb-4 bg-success">
-        <div class="row">
-            <!-- .col-4*3>h2{$/ titre} -->
-            <div class="col-4">
-                <h2>1/ MySQL</h2>
-                <ul>
-                    <li>MySQL peut s'utiliser en ligne de commande (Shell, Bash, CMDR et le Terminal sur MAc ou Linux, ou avec une interface graphique comme phpMyAdmin</li>
-                    <li>Pour se connecter en ligne de commande, on utilise <code>mysql -u utilisateur -p</code></li>
-                    <li class="bg-danger text-white">Attention : il faut penser à mettre le nom d'utilisateur spécifique au serveur, sur le PC en local. L'utilisateru est "root" qui signie "racine"</li>
-                    <li>En local sur PC,</li>
-                    <li></li>
-                </ul>
+    <section class="container mb-4 bg-primary">
+            <div class="row">
+                <!-- .col-4*3>h2{$/ titre} -->
+                <div class="col-4">
+                    <h2>1/ MySQL</h2>
+                    <ul>
+                        <li>MySQL peut s'utiliser en ligne de commande (Shell, Bash, CMDR et le Terminal sur MAc ou Linux, ou avec une interface graphique comme phpMyAdmin</li>
+                        <li>Pour se connecter en ligne de commande, on utilise <code>mysql -u utilisateur -p</code></li>
+                        <li class="bg-warning text-white">Attention : il faut penser à mettre le nom d'utilisateur spécifique au serveur, sur le PC en local. L'utilisateru est "root" qui signie "racine"</li>
+                        <li>En local sur PC, par défaut il n'y a pas de mot de passe, sur MAC le mot de passe est 'root'</li>
+                        <li>En ligne, chaque BDD aura son utilisateur propre et son mot de passe propre</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <h2>2/ SGBDR ou SGBD</h2>
+                    <ul>
+                        <li>Un SGBDR est un système de gestion de base de données relationnelles</li>
+                        <li>Qui permet de gérer une BDD Base de données</li>
+                        <li>Un CRUD : create, read, update, delete</li>
+                        <li>Date de naissance : 1994</li>
+                        <li>Open Source</li>
+                        <li>Concurrents : Oracle, MS access, SQLite, PostgreSQL</li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li><abbr title="Système de Gestion de Base de Données Relationnelles">SGBDR</abbr> système de gestion de base de données relationnelles</li> 
+                        <li><abbr title="Système de Gestion de Base de Données">SGBD</abbr> système de gestion de base de données</li>
+                        <li><abbr title="Modèle conceptuel de données">MCD</abbr> Modèle conceptuel de données</li>
+                        <li><abbr title="Base de données">BDD</abbr> Base de données</li>
+                        <li><abbr title="Database">DB</abbr> Database en anglais</li>
+                        <li><abbr title="Structured Query Language">SQL</abbr> Structured Query Language</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <h2>3/ En résumé</h2>
+                    <ul>
+                        <li>A l'intérieur de BDD les informations sont classées, structurées et regroupées par sujet</li>
+                        <li>Le langage de requête SQL nous permet d'échanger les informations avec la base</li>
+                        <li>Dans une BDD, les bases de données sont représentées sous forme de "table"</li>
+                        <li>Dans une "table", nous avons des colonnes. Chaque donnée sera introduite sous forme de ligne dans la "table"</li>
+                        <li class="small">Une fois que les informations ont été enregistrées, il est important de les gérer (ajout, modification, suppression, consultation)</li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-4">
-                <h2>2/ SGBDR ou SGBD</h2>
+            <!-- fin row  -->
+
+            <div class="row">
+                <h2 id="modelisation">2- Modélisation</h2>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <p>Avant de créer une BDD, il est essentiel de se poser et de réfléchir à la modélisation de la base : pour éviter de se tromper.</p>
+                        <p>Changer la modélisation d'une BDD en cours de projet n'est pas recommandé; cela nous forcera à réécrire une bonne partie du code</p>
+                        <h3>Comment modéliser une BDD ?</h3>
+                        <p>On peut modéliser uen BDD sur une feuille de papier ou utilser un logiciel pour nous aider. Exemple : <a href="https://www.mysql.com/fr/products/workbench/" class="text-white">MySQLWorkBench</a> </p>
+                        <p>Pour une bonne conception de BDD, il faut réfléchir en terme de sujet modélisant ceux du monde réel. La modélisation se comporte de différentes tables (une table = un sujet); ex. si nous vendons des produits il faut une table des produits et une table des commandes</p>
+                    </div>
+                    <!-- fin col  -->
+            
+                <div class="col-12 col-md-6 col-lg-4">
+                    <ul>
+                        <li>1 sujet représente 1 table dans une base de données. </li>
+                        <li>1 table est un emplacement de sauvegarde.</li>
+                        <li>Les données sont stockées à l'intérieur de tables. Une table peut être comparée à une liste, qui contient des enregistrements relatifs à un sujet bien défini.</li>
+                    </ul>
+                </div>
+                <!-- fin col  -->
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <p>Il faut réfléchir au sujet et à ses conséquences. Si nous vendons des produits, nous aurons certainement des membres. 1 table membre sera donc nécessaire. En terme de fonctionnalité, si nous souhaitons proposer un abonnement newsletter aux membres, nous aurons besoin d'1 table newsletter repertoriant les membres abonnés <br>
+                        <strong>table = 1 sujet</strong></p>
+                </div>
+                <!-- fin col  -->
             </div>
-            <div class="col-4">
-                <h2>3/ En résumé</h2>
+            <!-- fin row  -->
+
+            <div class="row">
+                <h2>4- Les colonnes ou les champs</h2>
+                    <div class="col-12 col-md-6 col-lg-4 bg-light">
+                        <p>Chaque table possède généralement plusieurs champs (aussi appelés colonnes). Les colonnes / champs représentent des caractéristiques relatives au sujet (la table).</p>
+                    </div>
+                    <!-- fin col  -->
+                    <div class="col-12 col-md-6 col-lg-4 bg-light">
+                        <p>Pour savoir, quelle colonne mettre dans quelle table, il faut se poser la question suivante : qu'est-ce qui pourrait décrire mon sujet ? quelles sont les informations sur mon sujet ? <br>
+                            Par exemple, la table membre aura les champs : pseudo, mot de passe, nom, prenom, adresse, email, etc.</p>
+                    </div>
+                    <!-- fin col  -->
             </div>
-        </div>
-        <!-- fin row  -->
+            <!-- fin row  -->
     </section>
+    <!-- fin container  -->
+
+    
 
     <!-- Option 1 : Bootsrap Bundle with Popper  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
