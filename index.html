@@ -28,7 +28,7 @@
         <!-- fin row  -->
     </header>
 
-    <section class="container mb-4 bg-primary">
+    <section class="container mb-4 bg-warning">
             <div class="row">
                 <!-- .col-4*3>h2{$/ titre} -->
                 <div class="col-4">
@@ -157,6 +157,145 @@
                       </table>
                 </div>
             </div>
+
+            <div class="row">
+                <h2>6- Types de données PK AI pour les ID</h2>
+                <div class="col-md-6">
+                    <h3>a/ PK - Les identifiants - Primary Key, clé primaire</h3>
+                    <ul>
+                        <li>Les identifiants sont des champs un peu particuliers car ils ne décrivent pas le sujet. Ce sont des champs ou colonnes systématiquement présents dans chaque table et ce en première position</li>
+                        <li>Les identifiants  sont uniques</li>
+                        <li>Chaque table possède un champs identifiants, nous appelons cela une clé primaire (PK)</li>
+                        <li>Par exemple, nous pourrons appeler le champs "id" ou encore "id_membre" ou "idMembre" "id_user" pour la table "membre" ou "user"</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>b/ AI - Auto Increment, auto incréménté</h3>
+                    <ul>
+                        <li>Auto-incrémenté est une option permettant de générer un numéro unique dans une colonne ou un champ de type clé primaire (identifiant). <br>
+                        Par conséquent, retenez bien que le 1er champ de chaque table sera systématiquement un "id" qui sera PK et AI</li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>c/ NULL, NOT NULL</h3>
+                    <ul>
+                        <li>Dans chaque champ, nous pourrons indiquer si nous acceptons les valeurs NULL ou NOT NULL</li>
+                        <li>NULL est un type de valeur en informatique évitant de laisser un champs vide si nous n'avons pas d'informations à y déposer</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>d/ Les relations</h3>
+                    <p>Il arrive parfois que les sujets interagissent entre eux : exemples :</p>
+                    <ul>
+                        <li>Un membre commande un produit (ou un produit est commandé par un memebre), nous devons enregistrer l'information dans une table commande</li>
+                        <li>Un conducteur conduit un véhicule (ou un véhicule est conduit par un conducteur), il nous faudra une table permettant de préciser qui conduit quel véhicule</li>
+                    </ul>
+                </div>
+                <!-- fin col  -->
+            </div>
+            <!-- fin row  -->
+
+            <div class="row">
+                <h2>7- Les cardinalités</h2>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Les cardinalités permettent de connaître le chiffre minimum et maximum d'enregistrements pour une relation</li>
+                        <li>Exemple 1: un homme est le fils d'une femme et d'une seule(minimum = 1 et max = 1)<br>
+                        En revanche, une femme peut n'avoir aucun enfant ou plusieurs (min = 0 et max = n ) (n = nombre entier naturel)</li>
+                        <li>Exemple 2 : Un livre possède forcément un auteur et un seul. Relation (1,1). Minimum 1 auteur, Maximum 1 auteur. 1 auteur peu avoir écrit plusieurs livre (ou aucun). Relation (0,n). Minimum 0 livre, Maximum N livres</li>
+                    </ul>
+                </div>
+                <!-- fin col  -->
+            
+                <div class="col-md-6">
+                    <figure>
+                        <img src="img/cardinalites.jpg" alt="les cardinalités">
+                        <figcaption class="bg-light text-center">Les cardinalités</figcaption>
+                    </figure>
+                </div>
+                <!-- fin col  -->
+            </div>
+            <!-- fin row     -->
+
+            <div class="row">
+                <h2>8/ Les tables de jointure</h2>
+                <div class="col-md-6">
+                    <p>Une table de jointure permet de faire le lien entre 2 tables</p>
+                    <p>Exemple : Une société de taxi, qui possède des conducteurs et des véhicules.</p>
+                    <ul>
+                        <li>Un conducteur peut conduire 0 ou plusieurs véhicules</li>
+                        <li>Un véhicule peut être conduit par 0 plusieurs conducteurs</li>
+                    </ul>
+                    <p>Comment savoir quel conducteur conduit quel véhicule ? Ou dans l'autre sens quel véhicule est conduit par quel conducteur ?</p>
+                    <p>Avec cette table de jointure, nous savons qu'Alexandre est autorisé à conduire la BMW et la Mercedes et Julien ne peut conduire que la BMW</p>
+                </div>
+                <!-- fin col  -->
+
+                <div class="col-md-6">
+                    <figure>
+                        <img src="img/jointures.jpg" alt="jointures">
+                        <figcaption class="bg-light">Une table de jointure</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <!-- fin row  -->
+
+            <div class="row">
+                <h2>9- Clés étrangères ou FK</h2>
+                <div class="col-md-12">
+                    <p>Les clés étrangères sont des champs forcément clés primaires dans leur table d'origine et qui se retrouvent dans une table extérieure.</p>
+                    <p>Un champ clé étrangère permet de faire la relation avec un autre sujet.</p>
+                </div>
+                <!-- fin col  -->
+                <div class="col-md-6">
+                    <figure>
+                        <img src="img/clef_etrangere_1.jpg" alt="table de jointure">
+                        <figcaption class="bg-light">Table de jointure et les clés étrangères</figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-6">
+                    <figure>
+                        <img src="img/clef_etrangere_2.jpg" alt="table de jointure">
+                        <figcaption class="bg-light">Les tables d'origine des clés étrangères</figcaption>
+                    </figure>
+                </div>
+                <!-- fin col  -->
+            </div>
+            <!-- fin row  -->
+
+            <div class="row justify-content-center">
+                <h2>10/ Les enregistrements</h2>
+                <div class="col-md-8 ">
+                    <p class="bg-danger text-white">Chaque enregistrement représente en ligne dans la table de la BDD. Chaque nouvel
+                         enregistrement va s'auto-incrémenter. Même si un ID est supprimé, il ne sera pas réutilisé !</p>
+                </div>
+            </div>
+            <!-- fin row  -->
+
+            <div class="row">
+                <h2>11/ Comment interroger la BDD ?</h2>
+                <div class="col-md-4">
+                    <h3>a/ Les requêtes</h3>
+                    <p>Une requête permet de poser une question afin d'obtenir une réponse ou encore de donner un ordre.</p>
+                    <p>Nous terminerons toutes nos requêtes SQL par un point virgule ";" pour que MySQL sache que nous avons terminé d'écrire et qu'il doit exécuter notre demande</p>
+                    <p>De manière standard les requêtes SQL seront écrite en majuscule <code>SELECT * FROM membre;</code></p>
+                </div>
+                <!-- fin col  -->
+
+                <div class="col-md-8">
+                    <h3>b/ Types de requêtes</h3>
+                    <p>Il existe 4 types de requêtes :</p>
+                    <ul>
+                        <li>Sélection <code>SELECT</code> ; requête question/réponse, nous demandons et obtenons une réponse</li>
+                        <li>Insertion <code>INSERT</code> ; requête d'action, qui aura un impact sur les données</li>
+                        <li>Modification <code>UPDATE</code> ; requête d'action, qui aura un impact sur les données</li>
+                        <li>Suppression <code>DELETE</code> ; requête d'action, qui aura un impact sur les données</li>
+                    </ul>
+                </div>
+                <!-- fin col  -->
+            </div>
+            <!-- fin row  -->
     </section>
     <!-- fin container  -->
 
