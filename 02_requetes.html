@@ -75,20 +75,21 @@
                     <li>Afficher la profession de l'employé 547<code>SELECT service FROM employes WHERE id_employes = 547;</code></li>
                     <li>Afficher la date d'embauche<code> SELECT date_embauche FROM employes WHERE id_employes = 547;</code></li>
                     <li>Afficher le nombre de commerciaux<code> SELECT COUNT(*) FROM employes WHERE service = 'commercial';</code></li>
-                    <li>Afficher le coût de commerciaux sur une année<code>SELECT nom, prenom, salaire, salaire*12 AS salaire_annuel FROM employes WHERE service = 'commercial';</code></li>
-                    <li>Afficher le salaire moyen par service<code></code></li>
-                    <li>Afficher le nombre de recrutement sur l'année 2010<code></code></li>
-                    <li>Augmenter le salaire pour chaque employé de 100 €<code></code></li>
+                    <li>Afficher le coût de commerciaux sur une année<code>SELECT SUM(salaire *12) AS 'salaire_annuel_commerciaux' FROM employes WHERE service = 'commercial';</code></li>
+                    <li>Afficher le salaire moyen par service<code>SELECT AVG(salaire), service FROM employes GROUP BY service;</code></li>
+                    <li>Afficher le nombre de recrutement sur l'année 2010<code>SELECT COUNT(*) as 'nb de recrutement' FROM employes WHERE date_embauche LIKE '2010%';</code></li>
+                    <li>Augmenter le salaire pour chaque employé de 100 €<code>UPDATE employes SET salaire=salaire+100;</code></li>
                     <li>Afficher le nombre de service<code></code></li>
                     <li>Afficher les informations de l'employé du service commercial gagnant le salaire le plus élevé:<code></code></li>
-                    <li>Afficher  l'employé ayant été embauché en dernier<code></code></li>
+                    <li>Afficher  l'employé ayant été embauché en dernier<code>SELECT * FROM employes WHERE date_embauche = (SELECT max(date_embauche) FROM employes);</code></li>
                 </ul>
             </div>
             <!-- fin col  -->
         </div>
         <!-- fin row  -->
             
-           
+           SELECT SUM( salaire *12) FROM employes WHERE service = 'commercial';
+           SELECT AVG(salaire) AS 'salaire_moyen_par_service', service FROM employes GROUP BY service ORDER BY service_moyen_par_service ASC
     </section>
     <!-- fin container -->
 
