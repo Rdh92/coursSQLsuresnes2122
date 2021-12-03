@@ -29,5 +29,16 @@
 10- Les regroupements
 
 ### 02_requetes.html
+1- INSERT INTO, insertion
+2- UPDATE, mise à jour
+3- DELETE, effacer
+4- Exo
 ### 03_requetes_imbriquees.html
+1- Création de la BDD "bibliotheque"
+
+    a/ Modélisation
+    b/ Créations de tables
+    c/ Créations des clés étrangères
+    d/ Insertion des données
+2- SELECT sur plusieurs tables
 ### 04_jointures.html
