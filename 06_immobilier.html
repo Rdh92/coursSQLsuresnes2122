@@ -153,6 +153,18 @@
     </div>
 
 </div>
+<ul>
+    <li><code>SELECT nom FROM agence;</code></li>
+    <li><code>SELECT idAgence FROM agence WHERE nom='orpi';</code></li>
+    <li><code>SELECT * FROM logement LIMIT 0,1;</code></li>
+    <li><code>SELECT COUNT(*) AS 'Nombre_de_logements' FROM logement;</code></li>
+    <li><code>SELECT * FROM logement WHERE prix < 150000 AND categorie = 'vente' ORDER BY prix;</code></li>
+    <li><code>SELECT COUNT(idLogement) as 'nombre_logement_en_location' FROM logement WHERE categorie = 'location';</code></li>
+    <li><code>SELECT DISTINCT ville FROM demande;</code></li>
+    <li><code>SELECT ville, COUNT(ville) as 'nbr_logement_envente_ville' FROM demande WHERE categorie='vente' GROUP BY ville;</code></li>
+    <li><code>SELECT idLogement FROM logement WHERE categorie = 'location';</code></li>
+    <li><code>SELECT idLogement FROM logement WHERE superficie BETWEEN 20 AND 30;</code></li>
+</ul>
     </section>
     <!-- fin container -->
 
